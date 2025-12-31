@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #counterlabel{
+        text-align: center;
+        font-size: 10em;
+        display: block;
+       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .btns{
+            text-align: center;
+       
+        font-size: 2em;
+        display: block;
+
+    }
+    button{
+         color: rgb(245, 237, 240);
+        background-color: rgba(12, 4, 242, 0.968);
+        padding: 5px 4px 6px 7px ;
+        box-sizing: border-box;
+        border: 5px solid rgb(181, 162, 162);
+        border-radius: 5px ;
+
+        cursor: pointer;
+        
+    }
+    button:hover{
+        color: rgb(217, 232, 232);
+        background-color: rgb(14, 8, 1);
+    }
+
+</style>
+
+<body>
+  
+    <label id="counterlabel">0</label>
+    <div class="btns">
+        <button id="increasebtn" class="button"> INCREASE</button>
+        <button id="decreasebtn" class="button">DECREASE</button>
+        <button id="resetbtn" class="button">RESET</button>
+
+    </div>
+    
+  <script>
+        let increasebtn = document.getElementById("increasebtn");
+        let decreasebtn = document.getElementById("decreasebtn");
+        let resetbtn = document.getElementById("resetbtn");
+         let counterlabel = document.getElementById("counterlabel");
+        let count = 0;
+
+
+        function calxnum(){
+              counterlabel.textContent = count;
+              if( count>0){ 
+                counterlabel.style.color= "green";
+              }
+              if( count < 0){
+                counterlabel.style.color="red";
+              }
+        }
+        
+            increasebtn.onclick= function () {
+            count++;
+         calxnum();
+           
+          }
+
+
+
+        decreasebtn.onclick = function () {
+                count--;
+        calxnum();
+            }
+            
+        resetbtn.onclick = function () {
+            count = 0;
+         calxnum();
+
+        }
+
+
+    </script>
+</body>
+</html>
